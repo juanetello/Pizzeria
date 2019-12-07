@@ -1,0 +1,15 @@
+1572385234436	Copy file
+1572385472526	Copy compilation unit
+1572389481005	Rename package 'com.example.demo'
+1572564601959	Rename package 'entity'
+1572564609907	Delete element
+1572564625692	Rename package 'com.trabajo.itu.pizeria.service'
+1572564631643	Delete element
+1572564636236	Delete element
+1572565611182	Rename local variable 'clave1'
+1572565640517	Rename local variable 'clave2'
+1572565673964	Rename type 'Usuario'
+1572565689822	Rename type 'UsuarioController'
+1572565712704	Rename type 'UsuarioServicio'
+1572565749360	Rename local variable 'usuario'
+1572566376830	Rename local variable 'usuarioExistente'

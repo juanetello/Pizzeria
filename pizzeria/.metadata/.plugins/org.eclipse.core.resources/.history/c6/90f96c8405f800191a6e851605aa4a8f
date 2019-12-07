@@ -1,0 +1,39 @@
+package com.trabajo.itu.pizeria.service;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.trabajo.itu.pizeria.model.Role;
+import com.trabajo.itu.pizeria.model.User;
+import com.trabajo.itu.pizeria.repository.UserRepository;
+
+/**
+ * 
+ * @author juantello
+ *
+ */
+
+@Service
+public class UserDetailServiceImpl implements UserDetailService {
+	@Autowired
+    private UserRepository userRepository;
+
+    @Override
+    @Transactional(value = true)
+    public User loadUserByUsername(String username) {
+        User user = userRepository.findByUserName(username);
+        if (user == null) throw new UsernameNotFoundException();
+
+        Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
+        for (Role role : user.getRoles()){
+            grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
+        }
+
+        return new User();// new User(user.getUsername(), user.getPassword(), grantedAuthorities);
+    }
+}

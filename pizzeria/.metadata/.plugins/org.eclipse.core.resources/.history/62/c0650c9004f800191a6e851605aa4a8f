@@ -1,0 +1,10 @@
+package com.trabajo.itu.pizeria.service;
+
+public class UserDetails {
+
+	public String getUsername() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

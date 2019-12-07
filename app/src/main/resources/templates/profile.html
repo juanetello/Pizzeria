@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Pizzeria donde vos armas tu pizza como queres" />
+    <meta name="author" content="Juan Tello" />
+
+    <title>Pizzeria - Profile</title>
+
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/libs/carrousel/bootstrap-touch-slider.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/img/pizza.ico" />
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="navbar navbar-default navbar-fixed-top menu-back">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="/">
+                    <img src="/img/PizzaPizzaLogo.png" class="navbar-brand-logo" alt="logo pizzeria">
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/favoritos"> FAVORITOS </a></li>
+                    <li><a href="#contacto"> CONTACTO </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-1 col-md-1"></div>
+
+    <div class="row">
+        <div class="col-lg-10 col-md-10" style="text-align: center;">
+            
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-4">
+                        <img src="/img/profile_pic.png" class="card-img pro-carlos" alt="profile image">
+                    </div>
+
+                    <div class="col-lg-8 col-md-8">
+                        <div class="card-body">
+                            <div class="d-inline-block">
+                                <a class="btn vd_btn vd_bg-green btn-xs btn-block no-br">
+                                    <i class="fas fa-check-circle"></i>
+                                    Amigos
+                                </a>
+                            </div>
+
+                            <h5 class="card-title">Hola, <span
+                                    th:text="${userPizzeria.name + ' ' + userPizzeria.surname} "></span></h5>
+
+                            <p class="d-inline-block">Calificacion usuario</p>
+
+                            <p class="d-inline-block">
+                                <i class="fa fa-star vd_yellow fa-fw"></i>
+                                <i class="fa fa-star vd_yellow fa-fw"></i>
+                                <i class="fa fa-star vd_yellow fa-fw"></i>
+                                <i class="fa fa-star vd_yellow fa-fw"></i>
+                                <i class="fa fa-star vd_yellow fa-fw"></i>
+                            </p>
+
+                            <h5>Tu usuario para ingresar al sistema es: <span th:text="${userPizzeria.mail}"></span>
+                            </h5>
+
+                            <p>Miembro Desde <span class="text-muted">Enero 07, 2019</span></p>
+
+                            <script>
+                                document.write('Ultima modificación: ' + window.document.lastModified)
+                            </script>
+
+                            <br>
+                            <br>
+
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" onclick="editProfile()">
+                                Modifica tus datos
+                            </button>
+                        </div>
+
+                        <div id="hiddenDiv">
+                            <form th:action="@{/user/updateUser}" method="POST" class="m-t" role="form">
+                                <input type="hidden" name="id" th:value="${userPizzeria.id}" />
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Ingrese su nombre " name="name"
+                                        th:value="${userPizzeria.name}" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Ingrese su apellido "
+                                        name="surname" th:value="${userPizzeria.surname}" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Ingrese su clave"
+                                        name="password" th:value="${userPizzeria.password}" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="mail" class="form-control" placeholder="Ingrese su mail" name="mail"
+                                        th:value="${userPizzeria.mail}" />
+                                </div>
+
+                                <button type="submit"
+                                    class="btn btn-lg btn-primary btn-block text-uppercase">Guardar</button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+           
+        </div>
+    </div>
+
+    <div class="col-lg-1 col-md-1"></div>
+
+    <section>
+        <hr size="30">
+        <div class="row text-center">
+            <div class="col-lg-12 col-md-12">
+                <h4 class="clr-main">
+                    <strong>CONTACTO</strong>
+                </h4>
+                <p></p>
+                <br>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+
+            <div class="col-lg-9 col-md-9">
+                <div id="googleMap" style="height: 300px; margin-left: 5%; margin-right: 5%;"></div>
+            </div>
+            <div class="col-lg-3 col-md-3">
+                <div class="widget margin-abajo">
+                    <div class="about-widget">
+                        <address>
+                            <i class="fas fa-street-view" style="font-size: 20px; color: #ffe192"></i> <span>Rafael
+                                Cubillos 2100 - Godoy Cruz</span>
+                        </address>
+                        <address>
+                            <i class="fas fa-mobile" style="font-size: 20px; color: #ffe192"></i>
+                            <span>0261 - 4445555</span>
+                        </address>
+                        <address class="last">
+                            <i class="fas fa-envelope" style="font-size: 20px; color: #ffe192"></i>
+                            <span>info@pizzeria.com</span>
+                        </address>
+                    </div>
+                    <!-- end about-widget -->
+                </div>
+                <!-- end widget -->
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container" id="contacto" style="padding-top: 2%; padding-right: 4%; padding-left: 4%;">
+        <div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12" style="padding-bottom: 1%">
+                    <div align="center">
+                        <a href="https://www.linkedin.com/in/juan-esteban-tello-13415b125">
+                            <p style="color: grey; font-size: 16px">
+                                Developed by <strong>Juan Tello</strong>
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function myMap() {
+            var mapProp = {
+                center: new google.maps.LatLng(-32.939420, -68.820700),
+                zoom: 17,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCu-A-xlRBJo35r69D2huP05cLBVmjthZ4&callback=myMap">
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
+
+    <script type="text/javascript" src='/js/main.js'></script>
+
+    <script src="/libs/carrousel/bootstrap-touch-slider.js"></script>
+
+    <script type="text/javascript">
+        $('#bootstrap-touch-slider').bsTouchSlider();
+    </script>
+
+
+
+</body>
+
+</html>

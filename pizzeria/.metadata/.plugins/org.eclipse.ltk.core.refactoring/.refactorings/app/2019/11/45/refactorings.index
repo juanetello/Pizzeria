@@ -1,0 +1,6 @@
+1572997481635	Rename method 'update'
+1573168020215	Move compilation unit
+1573169136780	Rename type 'User'
+1573169277288	Rename enum constant 'ADMINISTRADOR'
+1573169293040	Rename enum constant 'CLIENTE'
+1573169566588	Rename local variable 'userSystem'

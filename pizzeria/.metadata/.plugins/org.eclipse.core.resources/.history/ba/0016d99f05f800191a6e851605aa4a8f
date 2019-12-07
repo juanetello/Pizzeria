@@ -1,0 +1,5 @@
+package com.trabajo.itu.pizeria.service;
+
+public class UsernamePasswordAuthenticationToken {
+
+}

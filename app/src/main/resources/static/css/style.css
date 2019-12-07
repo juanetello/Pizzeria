@@ -1,0 +1,420 @@
+/*=============================================================
+    Authour URI: www.binarytheme.com
+    License: Commons Attribution 3.0
+
+    http://creativecommons.org/licenses/by/3.0/
+
+    100% To use For Personal And Commercial Use.
+    IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
+   
+    ========================================================  */
+.about-widget i
+{
+    padding-right: 10px;
+    padding-top: 10px;
+}
+.about-widget span
+{
+  font-weight: bold;
+  font-size: medium;
+  color: grey;
+}
+.about-widget
+{
+  
+}
+
+#tipospizza-info
+{
+  padding-top: 5%;
+}
+
+#tipospizza-info i {
+    margin-right: 10px;
+    color: #f5881f;
+    cursor: pointer;
+}
+
+#variedades-info
+{
+  padding-top: 5%;
+}
+
+#variedades-info i {
+    margin-right: 10px;
+    color: #f5881f;
+    cursor: pointer;
+}
+
+#speech strong
+{
+  color:#ff6e37 !important;
+  font-size: 20px;  
+  font-family: 'Helvetica'
+}
+
+#speech p
+{
+  font-size: 18px;
+  font-family: 'Helvetica'
+
+}
+
+.nav li a 
+{
+  font-weight: bold !important;
+}
+
+.about-widget a
+{
+  color: inherit;
+}
+
+/*=====================================
+   GENERAL STYLE SECTION
+    ===================================*/
+    a:hover
+    {
+      color:#002ea1 !important;
+      text-decoration: none;
+    }
+
+    a
+    {
+
+    }
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin-top:70px;
+    font-size:13px;
+    line-height:25px;
+    background-color: #F7F7F7;
+}
+.text-center {
+    text-align:center;
+}
+section {
+    margin:70px 0px 70px 0px;
+}
+.pad-top-botm {
+    padding-top:50px;
+    padding-bottom:50px;
+}
+.pad-row {
+    padding-top:20px;
+}
+/*=====================================
+   COLOR CODES
+    ===================================*/
+.clr-white {
+    color:#fff;
+}
+.clr-main {
+ color: #f5881f;
+}
+.transparent-bk {
+    background-color:transparent!important;
+}
+.clr-blue-bk {
+    background-color:#7383F8!important;
+}
+/*=====================================
+   TOP MENU STYLE SECTION
+    ===================================*/
+
+/*Menu Back Color*/
+.menu-back {
+    background-color:rgba(255,255,255,0.9);  
+}
+/*Logo Image */
+.navbar-brand-logo {
+    max-height: 112px;
+    padding-bottom: 10px;
+    margin-top: -20%;
+}
+/*top-menu links color*/
+.navbar-default .navbar-nav > li > a {
+    font-family:'CasperRegular', Helvetica, sans-serif;
+    color: #ff6e37;
+}
+/*top-menu links color on hover*/
+    .navbar-default .navbar-nav > li > a:hover {
+        color: #f5881f;
+    }
+
+/*top-menu links & margin*/    
+.navbar-nav > li > a {
+    margin: 5px 0px 5px 0px;
+}
+
+/*Font-awesome-icon*/
+.nav li > a>i {
+    color:#FB9351;
+    padding-left:5px;
+}
+/*dummy small text*/
+.nav li > a>span {
+    font-size:13px;display:table;
+    color: #C5C5C5;
+}
+/*sub-menu*/
+.nav .dropdown-menu > li > a {
+    padding: 15px 10px;
+    
+    border-bottom: 1px solid #565AB1;
+    margin: 5px;
+}
+
+    /*minimum sub-menu width*/
+.nav .dropdown-menu {
+    min-width: 200px;
+}
+
+/*sub-menu font-awesome-icon*/
+.nav .dropdown-menu > li > a > i{
+    color:#565AB1;
+    font-size:14px;
+    margin-right:10px;
+}
+/*Small Screen Header height of top menu*/
+.navbar-header {
+    min-height:70px;
+}
+/*making border transparent*/
+.navbar-default {
+border-color: rgba(231, 231, 231, 0);
+}
+/*Toggle Adjustment*/
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+background-color: rgba(221, 221, 221, 0);
+}
+
+.navbar-default .navbar-toggle {
+border-color: #A0761D;
+}
+
+/*=====================================
+   TOP SLIDER STYLE SECTION
+    ===================================*/
+
+/* navigation icon style*/
+ .control-icon {
+           position:absolute;
+           top:50%;
+           
+                 }
+
+ /* bootstrap adjustments */
+    .carousel-control.right {
+right: 0;
+left: auto;
+    background-repeat: repeat-x;
+    background-image: linear-gradient(to right,rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, 0) 100%)!important;
+}
+     .carousel-control.left {
+left: 0;
+right: auto;
+    background-repeat: repeat-x;
+    background-image: linear-gradient(to left,rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, 0) 100%)!important;
+}
+ /* Caption Back Color */
+     .back-light {
+    background-color:rgba(0, 0, 0, 0.80);
+    padding:10px;
+    line-height:30px;
+}    
+/*=====================================
+  HOME PAGE STYLES GENERAL
+    ===================================*/
+.service-info i{
+    margin-right:10px;
+    color:#f5881f;
+    cursor:pointer;
+    
+}
+.service-info i:hover{
+    
+    cursor: default;
+
+     -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.icon-round {
+margin-top: 30px;
+font-size: 60px;
+height: 128px;
+width: 128px;
+line-height: 130px;
+margin-right: 10px;
+text-align: center;
+display: inline-block;
+border-radius: 100%;
+margin-bottom: 10px;
+background-color:rgba(158, 158, 158, 0.15);
+}
+
+.vedio-style {
+    border: 0px;
+     width: 100%; 
+     min-height: 300px
+}
+
+/*====================================
+          Profile
+=================================*/
+
+
+div img.pro-carlos{
+  border: 3px solid rgb(128, 128, 128);
+  padding: 1%;
+  box-shadow: 0px 0px 10px 0px #000;
+  border-radius: 10px;
+}
+
+.card-body {
+    text-align: center;
+
+}
+
+
+div img.pro-carlos{
+  border: 3px solid rgb(128, 128, 128);
+  padding: 1%;
+  box-shadow: 0px 0px 10px 0px #000;
+  border-radius: 10px;
+}
+
+div.profile-cont{
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px #000;
+}
+
+
+/*=====================================
+  MEDIA STYLES 
+    ===================================*/
+.media-sec {
+    background-color:rgb(255,255,255);
+    padding:20px;
+    color:rgb(2,49,96);
+}
+    .media-sec h3 {
+         color:#f5881f;
+    }
+    .media-sec small {
+        color:rgb(2,49,96);
+    }
+    /*=======================================
+    STATS SECTION STYLES
+==================================================*/
+    .just-stats{
+padding-bottom: 50px;
+background: url(../img/stats.jpg) no-repeat 50% 50%;
+background-attachment: fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+width: 100%;
+display: block;
+height: auto;
+min-height: 250px;
+color: #fff;
+text-align:center;
+padding:30px;
+}
+.stats-div {
+    text-align:center;
+    width: 100%;
+    min-height: 100px;
+    padding: 30px 20px 30px 20px;
+    color:#fff;
+}
+
+.stats-div > i {
+    margin-left: 33px;
+}
+
+.stats-div > h4 {
+    margin-left: 33px;
+}
+.stats-div > h3 {
+    font-size:45px;
+    font-weight:900;
+}
+
+
+.clients-info {
+    background-color:rgb(255,255,255);
+    padding:20px;
+    color:rgb(2,49,96);
+}
+    .clients-info h3 {
+         color:#f5881f;
+    }
+    .clients-info small {
+        color:rgb(2,49,96);
+    }
+
+/*=====================================
+  FOOTER STYLES 
+    ===================================*/
+
+
+#contacto {
+    
+    bottom: 0;
+    background-color: #ffe192; 
+    color:#fff;
+    width: 100%;
+}
+#contacto i {
+    margin-right:10px;
+}
+#contacto span {
+   padding-right:10px;
+}
+#contacto small {
+    display:table-cell;
+    color: #C5C5C5;
+}
+#contacto p {
+
+}
+#contacto .media-heading > a {
+    color:#fff;
+    font-size:14px;
+}
+#blog-footer-div {
+     border-right: 1px solid #3D3577;
+      padding-right:10px;
+}
+#footser-end {
+    text-align:right;
+  background-color:#21165F; 
+   color:#fff;
+   padding:10px;
+}
+
+  /*=====================================
+   Media Queries
+  ===================================*/
+
+       @media all and (max-width: 786px) and (min-width: 100px) {
+  .carousel-caption{
+   display:none!important;
+  }
+}
+       
+       @media all and (max-width: 845px) and (min-width: 100px) {
+  .div-social-top{
+   display:none!important;
+  }
+}
+

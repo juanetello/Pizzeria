@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Pizzeria donde vos armas tu pizza como queres" />
+    <meta name="author" content="Juan Tello" />
+
+    <title>Pizzeria - Tamaños</title>
+
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/libs/carrousel/bootstrap-touch-slider.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/img/pizza.ico" />
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="navbar navbar-default navbar-fixed-top menu-back">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="/"> <img src="/img/PizzaPizzaLogo.png" class="navbar-brand-logo" alt="" />
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br>
+
+
+
+    <div class="col-lg-2 col-md-2"></div>
+
+    <div class="row">
+        <div class="col-lg-8 col-md-8">
+            <h3>Editar las porciones de pizza</h3>
+
+            <form th:action="@{/administracion/dimensiones/actualizar}" method="POST" role="form">
+                <input type="hidden" name="id" th:value="${dimensionesPizzas.id}">
+
+                <div class="form-group">
+                    <label>Código</label>
+                    <input type="text" class="form-control" placeholder="Ingrese el código" 
+                    name="codigo" th:value="${dimensionesPizzas.codigo}">
+                </div>
+
+                <div class="form-group">
+                    <label>Porciones</label>
+                    <input type="number" class="form-control" placeholder="Ingrese la porcion" 
+                    name="porciones" th:value="${dimensionesPizzas.porciones}" />
+                </div>
+
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" class="form-control" placeholder="Ingrese el nombre" 
+                    name="nombre" th:value="${dimensionesPizzas.nombre}" />
+                </div>
+
+                <button type="button" class="btn btn-danger block full-width m-b"><a
+                        href="/administracion/dimensiones/listado">Volver</a></button>
+                <button type="submit" class="btn btn-primary block full-width m-b">Guardar</button>
+
+                
+
+            </form>
+        </div>
+    </div>
+
+    <div class="col-lg-2 col-md-2"></div>
+
+    <br>
+    <br>
+
+
+    <div class="container" id="contacto" style="padding-top: 2%; padding-right: 4%; padding-left: 4%;">
+        <div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12" style="padding-bottom: 1%">
+                    <div align="center">
+                        <a href="https://www.linkedin.com/in/juan-esteban-tello-13415b125">
+                            <p style="color: grey; font-size: 16px">
+                                Developed by <strong>Juan Tello</strong>
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
+
+    <script type="text/javascript" src='/js/main.js'></script>
+
+</body>
+
+</html>

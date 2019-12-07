@@ -1,0 +1,46 @@
+package com.trabajo.itu.pizeria.service;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import com.trabajo.itu.pizeria.model.Role;
+import com.trabajo.itu.pizeria.model.User;
+import com.trabajo.itu.pizeria.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * 
+ * @author juantello
+ * @param <GrantedAuthority>
+ *
+ */
+
+@Service
+public class UserDetailServiceImpl<GrantedAuthority> implements UserDetailService {
+	@Autowired
+    private UserRepository userRepository;
+
+    @Override
+    @Transactional(readOnly = true)
+    public UserDetails loadUserByUsername(String username) {
+        User user = userRepository.findByUserName(username);
+        if (user == null) throw new UsernameNotFoundException();
+
+        Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
+        for (Role role : user.getRoles()){
+            grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
+        }
+
+        return new user(user.getUsername(), user.getPassword(), grantedAuthorities);
+    }
+}
